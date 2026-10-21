@@ -893,8 +893,8 @@ def parse_success_csv_path(output: str) -> Optional[Path]:
 # AUDIO DIARIZATION
 # ============================================================
 def default_audio_script_path() -> Path:
-    """Returns scripts/speech/audio_diarize.py for the packaged layout."""
-    return Path(__file__).resolve().parents[1] / "speech" / "audio_diarize.py"
+    """Returns audio/audio_diarize.py for the packaged layout."""
+    return Path(__file__).resolve().parents[1] / "audio" / "audio_diarize.py"
 
 def ensure_audio_script_available(script_path: Path) -> None:
     """Checks the diarizer and its colocated audio_utils.py dependency."""
@@ -2261,10 +2261,10 @@ def invalid_chat_participant_labels(rows: Sequence[Dict[str, str]]) -> List[str]
 
 def report_human_names(report_text: str) -> Tuple[List[str], str]:
     """Reuse the audio module's report-grounded, dataset-neutral name parser."""
-    speech_dir = Path(__file__).resolve().parents[1] / "speech"
-    speech_dir_text = str(speech_dir)
-    if speech_dir_text not in sys.path:
-        sys.path.insert(0, speech_dir_text)
+    audio_dir = Path(__file__).resolve().parents[1] / "audio"
+    audio_dir_text = str(audio_dir)
+    if audio_dir_text not in sys.path:
+        sys.path.insert(0, audio_dir_text)
     try:
         from audio_utils import extract_actor_candidates, extract_primary_report_party
 
@@ -2545,7 +2545,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--audio-script",
         default=None,
-        help="Path to audio_diarize.py. Default: ../speech/audio_diarize.py.",
+        help="Path to audio_diarize.py. Default: ../audio/audio_diarize.py.",
     )
     parser.add_argument(
         "--email-script",

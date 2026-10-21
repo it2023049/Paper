@@ -32,8 +32,8 @@ jobs:
           test -f chat/facebook_extract.py
           test -f chat/viber_extract.py
           test -f chat/extractor_utils.py
-          test -f speech/audio_diarize.py
-          test -f speech/audio_utils.py
+          test -f audio/audio_diarize.py
+          test -f audio/audio_utils.py
           test -f email/email_extract.py
 
       - name: Compile Python files
@@ -43,6 +43,6 @@ jobs:
             chat/facebook_extract.py \
             chat/viber_extract.py \
             chat/extractor_utils.py \
-            speech/audio_diarize.py \
-            speech/audio_utils.py \
+            audio/audio_diarize.py \
+            audio/audio_utils.py \
             email/email_extract.py

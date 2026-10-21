@@ -42,7 +42,7 @@ This is a research tool. Extracted transcripts and participant assignments requi
 │   └── mass_extract.py
 ├── email/
 │   └── email_extract.py
-└── speech/
+└── audio/
     ├── audio_diarize.py
     └── audio_utils.py
 ```
@@ -97,7 +97,7 @@ Processes Viber screenshots and collages, accounting for Viber-specific layouts 
 
 Extracts email evidence from supported screenshots for inclusion in the merged transcript.
 
-### `speech/audio_diarize.py`
+### `audio/audio_diarize.py`
 
 Runs MOSS transcription and speaker diarization. For participant attribution,
 the optional Ollama pass analyzes the case report and the complete anonymous
@@ -105,7 +105,7 @@ speaker-turn transcript. It keeps a stable identity for each speaker label
 within a recording and checks conflicting self-identification before assigning
 names. A recipient may remain `Unknown` when evidence is insufficient.
 
-### `speech/audio_utils.py`
+### `audio/audio_utils.py`
 
 Shared utilities for audio processing, participant attribution, and audio output generation.
 
@@ -558,7 +558,7 @@ python3 chat/mass_extract.py --help
 python3 chat/facebook_extract.py --help
 python3 chat/viber_extract.py --help
 python3 email/email_extract.py --help
-python3 speech/audio_diarize.py --help
+python3 audio/audio_diarize.py --help
 ```
 
 ## Limitations
